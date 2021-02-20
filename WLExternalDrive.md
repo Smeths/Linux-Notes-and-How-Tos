@@ -3,9 +3,11 @@
 1. With the external drive unattached Type "sudo blkid | grep UUID" to list the internal drives
 2. Attach drive into USB
 3. Type "sudo blkid | grep UUID" to list internal and external drives, compare the output to the output from step 1 to find the details of the external drive. Typically something like:
+
 <br>
-`/dev/sda1: LABEL_FATBOOT="distro" LABEL="distro" UUID="65FD-01C1" TYPE="vfat" PARTUUID="882e45ef-01"`
+/dev/sda1: LABEL_FATBOOT="distro" LABEL="distro" UUID="65FD-01C1" TYPE="vfat" PARTUUID="882e45ef-01"
 <br>
+
 4. Unmount the drive by typing "umount /dev/sda1"
 5. Load the drive into fdisk by typing "sudo fdisk /dev/sda"
 6. Type d to delete the partition; n for a new partition (except the default options); t to change the type of the partition, change the type to 7 (HPFS/NTFS/exFAT); w to write the changes to the disk and q to quit
